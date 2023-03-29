@@ -37,7 +37,6 @@ function App() {
   };
   const filtrar = () => {
     obtenerCalles();
-    console.log(calle);
   };
 
   const obtenerCalles = () => {
@@ -136,6 +135,7 @@ function App() {
       <div className="contenedor-principal">
         <div className="formulario">
           {/* falta filtrar con un botón, puede ser solo con región o region y provicia o las 3 */}
+
           <Card style={{ width: "60%", marginLeft: "5%" }}>
             <FormControl variant="standard" sx={{ m: 1, minWidth: 120 }}>
               <InputLabel id="demo-simple-select-standard-label">
@@ -206,11 +206,15 @@ function App() {
                 })}
               </Select>
             </FormControl>
-            <Button style={{ marginTop: "3%" }} onClick={filtrar}>
+            <Button
+              variant="outlined"
+              style={{ marginTop: "3%" }}
+              onClick={filtrar}
+            >
               Filtrar
             </Button>
           </Card>
-          <div className="grilla">
+          <div className="grilla" style={{ marginTop: "1%" }}>
             <Card
               style={{
                 height: 400,
