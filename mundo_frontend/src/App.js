@@ -16,7 +16,7 @@ function App() {
   const [provinciaSeleccionada, setProvinciaSeleccionada] = React.useState("");
   const [ciudad, setCiudad] = React.useState([]);
   const [ciudadSeleccionada, setCiudadSeleccionada] = React.useState("");
-  const [calle, setCalle] = React.useState("");
+  const [calle, setCalle] = React.useState([]);
 
   const handleChange = (event) => {
     setRegionSeleccionada(event.target.value);
@@ -24,12 +24,11 @@ function App() {
     setCiudadSeleccionada("");
     setCiudad([]);
     setProvincia([]);
-    setCalle([]);
   };
 
   const handleChange2 = (event) => {
     setProvinciaSeleccionada(event.target.value);
-    setCalle([]);
+
     setCiudadSeleccionada("");
   };
   const handleChange3 = (event) => {
@@ -123,10 +122,6 @@ function App() {
   React.useEffect(() => {
     obtenerCiudad(provinciaSeleccionada);
   }, [provinciaSeleccionada]);
-
-  // React.useEffect(() => {
-  //   obtenerCalles(ciudadSeleccionada);
-  // }, [ciudadSeleccionada]);
 
   const columns = [{ field: "nombre", headerName: "Nombre", width: 400 }];
 
